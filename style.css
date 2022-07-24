@@ -12,6 +12,8 @@ div.container {
     margin-left: 20px;
     margin-right: 20px;
     min-width: 840px;
+    position: relative;
+    background-color: white;
 }
 
 div.description {
@@ -22,16 +24,35 @@ div.description {
 div.right_part {
     width: 460px;
     float: left;
-    align-content: center;
+    position: absolute;
+    height: 340px;
+    top: 50%;
+    margin-top: -170px;
 }
 img.graph {
     width: 150px;
     height: 150px;
+    margin-right: 5px;
+}
+img.kitten {
+    margin-left: 5px;
+    width: 150px;
+    height: 150px;
+}
+
+div.graph {
+    text-align: center;
 }
 
 
 div.result_table {
     clear: both;
+    margin: 20px;
+    min-width: 840px;
+}
+div.footer {
+    margin: 20px;
+    min-width: 840px;
 }
 table {
     width: 100%;
@@ -63,3 +84,8 @@ div {
     border-radius: 15px;
     padding: 10px;
 }
+body {
+    padding: 10px;
+    margin: 0 auto;
+}
+

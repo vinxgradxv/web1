@@ -6,12 +6,95 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="header">
+<div class="header">
     <h1 class="header">Vinogradov Gleb, P32131, Variant: 1004</h1>
 </div>
-<div id="main">
 
-    <div class="floating-box" id="description">
+<div class="container">
+
+<div class="right_part">
+    <div class="graph">
+        <img src="graph.png" alt="Рисунок, на котором изображена заданная область" class="graph">
+    </div>
+
+
+    <div class="input_form">
+        <form method="get" name="coordinates_form" onsubmit="return validateForm();">
+            <label>Значение X:</label>
+            <input type="radio" id="x_value1"
+                   name="x_value" value="-4" checked>
+            <label for="x_value1">-4</label>
+
+            <input type="radio" id="x_value2"
+                   name="x_value" value="-3">
+            <label for="x_value2">-3</label>
+
+            <input type="radio" id="x_value3"
+                   name="x_value" value="-2">
+            <label for="x_value3">-2</label>
+
+            <input type="radio" id="x_value4"
+                   name="x_value" value="-1">
+            <label for="x_value4">-1</label>
+
+            <input type="radio" id="x_value5"
+                   name="x_value" value="0">
+            <label for="x_value5">0</label>
+
+            <input type="radio" id="x_value6"
+                   name="x_value" value="1">
+            <label for="x_value6">1</label>
+
+            <input type="radio" id="x_value7"
+                   name="x_value" value="2">
+            <label for="x_value7">2</label>
+
+            <input type="radio" id="x_value8"
+                   name="x_value" value="3">
+            <label for="x_value8">3</label>
+
+            <input type="radio" id="x_value9"
+                   name="x_value" value="4">
+            <label for="x_value9">4</label>
+
+            <label for="y_value"><br><br>Значение Y</label>
+            <input type="text" id="y_value" placeholder="-5 ... 5">
+            <label class="error_success" id="error_label">Error message</label>
+            <br><br>
+
+            <label>Значение R</label>
+
+            <input type="radio" id="r_value1"
+                   name="r_value" value="1" checked>
+            <label for="r_value1">1</label>
+
+            <input type="radio" id="r_value2"
+                   name="r_value" value="1.5">
+            <label for="r_value2">1.5</label>
+
+            <input type="radio" id="r_value3"
+                   name="r_value" value="2">
+            <label for="r_value3">2</label>
+
+            <input type="radio" id="r_value4"
+                   name="r_value" value="2.5">
+            <label for="r_value4">2.5</label>
+
+            <input type="radio" id="r_value5"
+                   name="r_value" value="3">
+            <label for="r_value5">3</label>
+
+            <br>
+
+            <input type="submit" id="save">
+            <input type="reset" value="reset">
+
+
+
+        </form>
+    </div>
+</div>
+    <div class="description">
         <h2 id="description_h2">
             Требования к лабораторной работе:
         </h2>
@@ -25,109 +108,35 @@
             <li>Страница должна содержать сценарий на языке JavaScript, осуществляющий валидацию значений, вводимых пользователем в поля формы. Любые некорректные значения (например, буквы в координатах точки или отрицательный радиус) должны блокироваться.</li>
         </ul>
     </div>
-
-    <div class="floating-box" id="graph">
-        <img src="graph.png" alt="Рисунок, на котором изображена заданная область" class="graph">
-    </div>
 </div>
 
-<div class="input_form">
-    <form method="get" name="coordinates_form">
-        <label>Значение X:</label>
-        <input type="radio" id="x_value1"
-               name="x_value" value="-4" checked>
-        <label for="x_value1">-4</label>
-
-        <input type="radio" id="x_value2"
-               name="x_value" value="-3">
-        <label for="x_value2">-3</label>
-
-        <input type="radio" id="x_value3"
-               name="x_value" value="-2">
-        <label for="x_value3">-2</label>
-
-        <input type="radio" id="x_value4"
-               name="x_value" value="-1">
-        <label for="x_value4">-1</label>
-
-        <input type="radio" id="x_value5"
-               name="x_value" value="0">
-        <label for="x_value5">0</label>
-
-        <input type="radio" id="x_value6"
-               name="x_value" value="1">
-        <label for="x_value6">1</label>
-
-        <input type="radio" id="x_value7"
-               name="x_value" value="2">
-        <label for="x_value7">2</label>
-
-        <input type="radio" id="x_value8"
-               name="x_value" value="3">
-        <label for="x_value8">3</label>
-
-        <input type="radio" id="x_value9"
-               name="x_value" value="4">
-        <label for="x_value9">4</label>
-
-        <label for="y_value"><br><br>Значение Y</label>
-        <input type="text" id="y_value" placeholder="-5 ... 5" required>
-
-        <br><br>
-
-        <label>Значение R</label>
-
-        <input type="radio" id="r_value1"
-               name="r_value" value="1" checked>
-        <label for="r_value1">1</label>
-
-        <input type="radio" id="r_value2"
-               name="r_value" value="1.5">
-        <label for="r_value2">1.5</label>
-
-        <input type="radio" id="r_value3"
-               name="r_value" value="2">
-        <label for="r_value3">2</label>
-
-        <input type="radio" id="r_value4"
-               name="r_value" value="2.5">
-        <label for="r_value4">2.5</label>
-
-        <input type="radio" id="r_value5"
-               name="r_value" value="3">
-        <label for="r_value5">3</label>
-
-        <br>
-
-        <input type="submit" id="save">
-        <input type="reset" value="reset">
-
-
-
-    </form>
-</div>
 
 <script>
-    const yValue = document.getElementById("y_value");
-    yValue.addEventListener("input", function (event) {
-        yValue.value = yValue.value.trim();
-        if (yValue.value === "") {
-            yValue.setCustomValidity("Заполните это поле");
+    function validateForm() {
+        const yValue = document.getElementById("y_value").value.trim();
+        if (yValue === "") {
+            alert("Заполните поле Значение Y!!!");
+            return false;
+        } else if (isNaN(yValue)) {
+            alert("Поле Значение Y принимает только числа");
+            return false;
+        } else if (yValue > 5 || yValue < -5) {
+            alert("Значение Y не входит в установленные рамки");
+            return false;
         }
-        if (isNaN(yValue.value)) {
-            yValue.setCustomValidity("Это поле принимает только числа");
+        else {
+            alert("Форма успешно отправлена");
+            return true;
         }
-        else if (yValue.value > 5 || yValue.value < -5){
-            yValue.setCustomValidity("Значение должно входить в интервал [-5; 5]");
+    }
 
-        }
-    })
 </script>
 
 
 
 <div class="result_table">
-    <table>
+    <table class="table">
+        <thead>
         <tr>
             <th>Текущее время</th>
             <th>Время исполнения</th>
@@ -136,6 +145,10 @@
             <th>Z</th>
             <th>Результат</th>
         </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
     </table>
 </div>
 

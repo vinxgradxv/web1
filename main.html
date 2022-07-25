@@ -20,7 +20,7 @@
 
 
     <div class="input_form">
-        <form method="get" name="coordinates_form" onsubmit="return validateForm();">
+        <form action="" name="coordinates_form" onsubmit="onSubmit(); return false;">
             <label>Значение X:</label>
             <input type="radio" id="x_value1"
                    name="x_value" value="-4" checked>
@@ -60,7 +60,6 @@
 
             <label for="y_value"><br><br>Значение Y</label>
             <input type="text" id="y_value" placeholder="-5 ... 5">
-            <label class="error_success" id="error_label">Error message</label>
             <br><br>
 
             <label>Значение R</label>
@@ -86,9 +85,11 @@
             <label for="r_value5">3</label>
 
             <br>
+            <br>
 
-            <input type="submit" id="save">
-            <input type="reset" value="reset">
+            <input type="submit" id="save" class="btn">
+            <input type="reset" value="Очистить форму" class="btn">
+            <button type="button" onclick="clearHistory()" class="btn">Очистить историю</button>
 
 
 
@@ -112,26 +113,7 @@
 </div>
 
 
-<script>
-    function validateForm() {
-        const yValue = document.getElementById("y_value").value.trim();
-        if (yValue === "") {
-            alert("Заполните поле Значение Y!!!");
-            return false;
-        } else if (isNaN(yValue)) {
-            alert("Поле Значение Y принимает только числа");
-            return false;
-        } else if (yValue > 5 || yValue < -5) {
-            alert("Значение Y не входит в установленные рамки");
-            return false;
-        }
-        else {
-            alert("Форма успешно отправлена");
-            return true;
-        }
-    }
 
-</script>
 
 
 
@@ -143,7 +125,7 @@
             <th>Время исполнения</th>
             <th>X</th>
             <th>Y</th>
-            <th>Z</th>
+            <th>R</th>
             <th>Результат</th>
         </tr>
         </thead>
@@ -161,6 +143,8 @@
 </div>
 
 
-
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="./javascript/table.js"></script>
+<script src="./javascript/restore.js"></script>
 </body>
 </html>

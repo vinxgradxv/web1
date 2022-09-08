@@ -1,4 +1,3 @@
-let tbody = document.getElementsByClassName("table")[0].getElementsByTagName('TBODY')[0];
 $.get("./server/restore.php", function (data) {
     if (data !== "") {
         let tbody = document.getElementsByClassName("table")[0].getElementsByTagName('TBODY')[0];
@@ -11,3 +10,19 @@ $.get("./server/restore.php", function (data) {
         tbody.lastChild.remove();
     }
 });
+
+if (getCookie("sound") === "on") {
+    change_sound();
+} else if (getCookie("sound") === undefined) {
+    document.cookie = "sound=off";
+}
+
+function getCookie(name) {
+    let matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+
+

@@ -1,9 +1,15 @@
-div.header {
+header {
     margin-left: 30px;
     margin-right: 30px;
     min-width: 700px;
     text-align: center;
-
+    font-family: sans-serif;
+}
+header h1 {
+    color: #0a2534
+}
+div.input_form {
+    margin-top: 10px;
 }
 
 
@@ -14,6 +20,7 @@ div.container {
     min-width: 840px;
     position: relative;
     background-color: white;
+    border: none;
 }
 
 div.description {
@@ -22,12 +29,12 @@ div.description {
 }
 
 div.right_part {
-    width: 460px;
+    width: 480px;
     float: left;
     position: absolute;
-    height: 340px;
+    height: 350px;
     top: 50%;
-    margin-top: -170px;
+    margin-top: -185px;
 }
 img.graph {
     width: 150px;
@@ -50,7 +57,7 @@ div.result_table {
     margin: 20px;
     min-width: 840px;
 }
-div.footer {
+footer {
     margin: 20px;
     min-width: 840px;
 }
@@ -81,7 +88,7 @@ table {
 
 
 
-div {
+div, header, footer{
     background-color: #FFEBCD;
     border: 1px solid black;
     border-radius: 15px;
@@ -94,7 +101,6 @@ body {
 
 
 .btn {
-
     border: 1px solid #fff;
     border-radius: 30px;
     font-weight: 600;

@@ -1,9 +1,10 @@
+const audio = new Audio;
 let get_X;
 let get_Y;
 let get_R;
 let first = true;
-let sad_cat = "data/9b81048132e5f84eb054c7c9b25e0674.gif";
-let happy_cat = "data/b78dc35cd99fe399b4b5a7bcf318ae97.gif";
+const SAD_CAT = "data/9b81048132e5f84eb054c7c9b25e0674.gif";
+const HAPPY_CAT = "data/b78dc35cd99fe399b4b5a7bcf318ae97.gif";
 let is_sound_on = false;
 function onSubmit() {
     if (validateForm()) {
@@ -57,7 +58,7 @@ function addRow(cur_time, comp_time, x, y, r, result){
     let tbody = document.getElementsByClassName("table")[0].getElementsByTagName('TBODY')[0];
     let row = document.createElement("TR");
     tbody.append(row);
-
+//
     if (first) {
         first = false;
         document.getElementById("no_result").remove();
@@ -118,14 +119,14 @@ function addCircle(x, y, r, result) {
     circle.setAttribute("cy", cy.toString());
     if (result === "Не попадает") {
         circle.setAttribute("fill", "red");
-        change_kitten(sad_cat);
+        change_kitten(SAD_CAT);
         if (is_sound_on) {
             playAudio("data/nepravilno-poprobuy-esch-raz.mp3");
         }
     }
     else {
         circle.setAttribute("fill", "green");
-        change_kitten(happy_cat);
+        change_kitten(HAPPY_CAT);
         if (is_sound_on) {
             playAudio("data/-est-probitie-wot.mp3");
         }
@@ -137,7 +138,9 @@ function change_kitten(src) {
 }
 
 function playAudio(url) {
-    new Audio(url).play();
+    audio.load();
+    audio.src = url;
+    audio.play();
 }
 
 function change_sound() {

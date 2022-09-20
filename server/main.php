@@ -16,7 +16,7 @@ function check_right_top($x, $y, $r) {
 function check_right_bottom($x, $y, $r) {
     return $y <= 0 && $y >= -$r && $x >= 0 && $x <= ($r / 2);
 }
-if ($_SERVER["REQUEST_METHOD"] == "GET" && isAllSet()) {
+if (isset($_GET) && isAllSet()) {
     session_start();
     $start = microtime(true);
     $x = $_GET['x'];
@@ -42,15 +42,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isAllSet()) {
             $otv = "Не попадает";
         }
 
-        $result = $dt . "#" . $time . "#" . $x . "#" . $y . "#" . $r . "#" . $otv . "#";
+        $result = "<tr><td>" .$dt . "</td> <td>" . $time . "</td> <td>" .$x ."</td> <td>" . $y . "</td> <td>" . $r . "</td> <td>" . $otv . "</td></tr>";
 
         if (!isset($_SESSION['results'])) {
             $_SESSION['results'] = array();
         }
         array_push($_SESSION['results'], $result);
 
+        echo $result;
 
-        echo $dt . "#" . $time . "#" . $x . "#" . $y . "#" . $r . "#" . $otv . "#";
+
+        //echo $dt . "#" . $time . "#" . $x . "#" . $y . "#" . $r . "#" . $otv . "#";
     }
 }
 else {

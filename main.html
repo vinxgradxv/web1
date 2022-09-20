@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Lab work 1 (Web)</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="elements.css">
+    <link rel="stylesheet" href="buttons.css">
     <link rel="shortcut icon" href="data/3357489.svg" type="image/svg">
 </head>
 <body>
 <header>
-    <h1 class="header">Виноградов Глеб, P32131, Вариант: 1004 <button id="sound_button" type="button" onclick="change_sound();">
+    <h1 class="header">Виноградов Глеб, P32111, Вариант: 1004 <button id="sound_button" type="button" onclick="change_sound();">
         <img id="sound_img" src="data/Frame%201no_sound.svg" alt="звук">
     </button>
     </h1>
@@ -16,7 +17,7 @@
 
 <div class="container">
 
-<div class="right_part">
+<div class="left_part">
     <div class="graph">
         <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_5_33)">
@@ -155,7 +156,7 @@
 
 
 <div class="result_table">
-    <table class="table">
+    <table id="result_table">
         <thead>
         <tr>
             <th>Текущее время</th>
@@ -182,6 +183,8 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="javascript/main.js"></script>
+<script src="./javascript/result_reaction.js"></script>
 <script src="./javascript/restore.js"></script>
+
 </body>
 </html>

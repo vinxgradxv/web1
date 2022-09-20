@@ -28,7 +28,7 @@ div.description {
     min-width: 300px;
 }
 
-div.right_part {
+div.left_part {
     width: 480px;
     float: left;
     position: absolute;
@@ -61,7 +61,7 @@ footer {
     margin: 20px;
     min-width: 840px;
 }
-table {
+#result_table {
     width: 100%;
     margin-bottom: 20px;
 }
@@ -100,30 +100,5 @@ body {
 }
 
 
-.btn {
-    border: 1px solid #fff;
-    border-radius: 30px;
-    font-weight: 600;
-    text-decoration: none;
-    color: #444;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
-    cursor: pointer;
-    user-select: none;
-    appearance: none;
-    touch-action: manipulation;
-    vertical-align: top;
-    transition: box-shadow 0.2s;
-}
-.btn:focus-visible {
-    border: 1px solid #4c51f9;
-    outline: none;
-}
-.btn:hover {
-    transition: all 0.2s;
-    box-shadow: 0 7px 14px rgb(65 132 144 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
-}
-.btn:active {
-    background-color: #808080;
-}
+
 

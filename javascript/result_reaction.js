@@ -15,12 +15,13 @@ function playAudio(url) {
 function change_sound() {
     if (is_sound_on) {
         is_sound_on = false;
+        audio.pause();
         document.getElementById("sound_img").setAttribute("src","data/Frame 1no_sound.svg");
-        document.cookie = "sound=off";
+        document.cookie = "sound=off; max-age=3600";
     }
     else {
         is_sound_on = true;
         document.getElementById("sound_img").setAttribute("src","data/Frame 1sound.svg");
-        document.cookie = "sound=on";
+        document.cookie = "sound=on; max-age=3600";
     }
 }

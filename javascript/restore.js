@@ -1,5 +1,4 @@
-makeCookiesLastLong();
-$.get("./server/restore.php", function (data) {
+$.get("./server/restore.php", {utc_dif: LOCAL_UTC_DIF}, function (data) {
     if (data !== "error" && data !== "") {
         document.getElementById("no_result").remove();
         first = false;
@@ -9,10 +8,11 @@ $.get("./server/restore.php", function (data) {
         }
     }
 });
+
 if (getCookie("sound") === "on") {
     change_sound();
 } else if (getCookie("sound") === undefined) {
-    document.cookie = "sound=off";
+    document.cookie = "sound=off; max-age=3600";
 }
 
 function getCookie(name) {
@@ -20,10 +20,6 @@ function getCookie(name) {
         "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
     ));
     return matches ? decodeURIComponent(matches[1]) : undefined;
-}
-
-function makeCookiesLastLong() {
-    document.cookie = "PHPSESSID=" + getCookie("PHPSESSID") + ";Max-Age=7200";
 }
 
 

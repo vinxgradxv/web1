@@ -5,6 +5,7 @@ let first = true;
 const SAD_CAT = "data/9b81048132e5f84eb054c7c9b25e0674.gif";
 const HAPPY_CAT = "data/b78dc35cd99fe399b4b5a7bcf318ae97.gif";
 
+const LOCAL_UTC_DIF = new Date().getTimezoneOffset();
 
 function onSubmit() {
     if (validateForm()) {
@@ -24,7 +25,7 @@ function onSubmit() {
             }
         }
         get_Y = document.getElementById("y_value").value.replace(/,/, '.');
-        $.get("./server/main.php", {x : get_X, y: get_Y, r: get_R}, function (data) {
+        $.get("./server/main.php", {x : get_X, y: get_Y, r: get_R, utc_dif: LOCAL_UTC_DIF}, function (data) {
             if (data !== "error") {
                 addRow(data);
                 addCircle();
